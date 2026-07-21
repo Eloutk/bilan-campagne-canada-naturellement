@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Le Canada, naturellement — Bilan de campagne 2026 · Agence Link</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -13,17 +13,25 @@
   <div class="wrap">
     <div class="brand">
       <div class="name">LINK<em>.</em></div>
-      <small>Rapport de campagne</small>
+      <small data-i18n="header.report">Rapport de campagne</small>
     </div>
-    <nav class="menu" aria-label="Navigation du bilan">
-      <a href="#fil">Fil de campagne</a>
-      <a href="#performance">Performance</a>
-      <a href="#enseignements">Enseignements</a>
-      <a href="#reco">Reconduction 2026</a>
+    <nav class="menu" data-i18n-aria="header.navAria" aria-label="Navigation du bilan">
+      <a href="#fil" data-i18n="nav.timeline">Fil de campagne</a>
+      <a href="#performance" data-i18n="nav.performance">Performance</a>
+      <a href="#enseignements" data-i18n="nav.learnings">Enseignements</a>
+      <a href="#reco" data-i18n="nav.renewal">Reconduction 2026</a>
     </nav>
     <div class="top-right">
-      <span class="pill-final">Bilan final</span>
-      <img src="assets/logo-canada-naturellement.png" alt="Le Canada, naturellement">
+      <div class="lang-switch" role="group" data-i18n-aria="header.langAria" aria-label="Langue">
+        <button type="button" class="lang-btn active" data-lang="fr" aria-pressed="true">
+          <span class="m">FR</span><span class="t">Français</span>
+        </button>
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+          <span class="m">EN</span><span class="t">English</span>
+        </button>
+      </div>
+      <span class="pill-final" data-i18n="header.final">Bilan final</span>
+      <img src="assets/logo-canada-naturellement.png" data-i18n-alt="brand.alt" alt="Le Canada, naturellement">
     </div>
   </div>
 </header>
@@ -38,93 +46,104 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Rapport de campagne · Bilan final — Janvier → Juin 2026</span>
+        <span class="eyebrow" data-i18n="hero.eyebrow">Rapport de campagne · Bilan final — Janvier → Juin 2026</span>
         <h1>Le Canada, naturellement<span class="pt">.</span></h1>
-        <p class="lead">Six mois de diffusion Meta &amp; Google Search pilotés par Link pour la destination Canada : un dispositif adapté mois après mois, conclu très largement au-delà des engagements contractuels.</p>
+        <p class="lead" data-i18n="hero.lead">Six mois de diffusion Meta &amp; Google Search pilotés par Link pour la destination Canada : un dispositif adapté mois après mois, conclu très largement au-delà des engagements contractuels.</p>
         <div class="hero-flags">
-          <span class="flag ok"><b>✓</b>Objectif contractuel de clics dépassé</span>
-          <span class="flag">Meta · Google Search</span>
-          <span class="flag">Landing opodo.fr</span>
-          <span class="flag">3 créas — 2 vidéos, 2 visuels fixes</span>
+          <span class="flag ok"><b>✓</b><span data-i18n="hero.flag1">Objectif contractuel de clics dépassé</span></span>
+          <span class="flag" data-i18n="hero.flag2">Meta · Google Search</span>
+          <span class="flag" data-i18n="hero.flag3">Landing opodo.fr</span>
+          <span class="flag" data-i18n="hero.flag4">3 créas — 2 vidéos, 2 visuels fixes</span>
         </div>
       </div>
       <div class="logo-card">
-        <img src="assets/logo-canada-naturellement.png" alt="Logo Le Canada, naturellement">
+        <img src="assets/logo-canada-naturellement.png" data-i18n-alt="brand.altLogo" alt="Logo Le Canada, naturellement">
         </div>
     </div>
     <div class="kpis">
-      <div class="kpi"><b><span data-count="7752169">0</span></b><span>Impressions diffusées — tous leviers confondus</span></div>
-      <div class="kpi"><b><span data-count="69918">0</span></b><span>Clics générés en 6 mois de campagne</span></div>
-      <div class="kpi"><b>12,40<span class="u">%</span></b><span>CTR moyen Search — très au-dessus des standards du secteur voyage</span></div>
-      <div class="kpi"><b>Mi-mars</b><span>Objectif contractuel de clics déjà dépassé à mi-parcours</span></div>
+      <div class="kpi"><b><span data-count="7752169">0</span></b><span data-i18n="hero.kpi1">Impressions diffusées — tous leviers confondus</span></div>
+      <div class="kpi"><b><span data-count="69918">0</span></b><span data-i18n="hero.kpi2">Clics générés en 6 mois de campagne</span></div>
+      <div class="kpi"><b>12,40<span class="u">%</span></b><span data-i18n="hero.kpi3">CTR moyen Search — très au-dessus des standards du secteur voyage</span></div>
+      <div class="kpi"><b data-i18n="hero.kpi4val">Mi-mars</b><span data-i18n="hero.kpi4">Objectif contractuel de clics déjà dépassé à mi-parcours</span></div>
     </div>
   </div>
 </section>
 <main>
 
-  <!-- ============ FIL DE CAMPAGNE ============ -->
   <section class="section" id="fil">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Le fil de la campagne</span>
-        <h2>Six mois, six intentions stratégiques.</h2>
-        <p>Un dispositif piloté, pas subi : chaque mois a répondu à une intention distincte. Cliquez sur un mois pour en explorer la lecture, les chiffres et l'enseignement.</p>
+        <span class="eyebrow" data-i18n="timeline.eyebrow">Le fil de la campagne</span>
+        <h2 data-i18n="timeline.title">Six mois, six intentions stratégiques.</h2>
+        <p data-i18n="timeline.desc">Un dispositif piloté, pas subi : chaque mois a répondu à une intention distincte. Cliquez sur un mois pour en explorer la lecture, les chiffres et l'enseignement.</p>
       </div>
-      <div class="mois-tabs" id="moisTabs" role="tablist" aria-label="Mois de la campagne"></div>
+      <div class="mois-tabs" id="moisTabs" role="tablist" data-i18n-aria="timeline.tabsAria" aria-label="Mois de la campagne"></div>
       <div class="mois-panel" id="moisPanel" aria-live="polite"></div>
     </div>
   </section>
 
-  <!-- ============ PERFORMANCE ============ -->
   <section class="section" id="performance" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Performance</span>
-        <h2>Un volume de clics remarquablement stable, quelle que soit la pression.</h2>
-        <p>Entre 9 900 et 12 700 clics par mois (hors février), preuve d'une gestion budgétaire maîtrisée — pendant que Search s'installe durablement au-dessus de 10 % de CTR.</p>
+        <span class="eyebrow" data-i18n="perf.eyebrow">Performance</span>
+        <h2 data-i18n="perf.title">Un volume de clics remarquablement stable, quelle que soit la pression.</h2>
+        <p data-i18n="perf.desc">Entre 9 900 et 12 700 clics par mois (hors février), preuve d'une gestion budgétaire maîtrisée — pendant que Search s'installe durablement au-dessus de 10 % de CTR.</p>
       </div>
       <div class="charts-grid">
         <div class="card wide">
-          <h3>Meta — pression de diffusion vs volume de clics</h3>
-          <p class="sub">Le doublement puis le pic d'impressions (mars-avril) sont des choix assumés de visibilité, une fois l'objectif de clics dépassé.</p>
-          <div class="chart-box"><canvas id="chartMeta" role="img" aria-label="Évolution mensuelle des impressions et clics Meta"></canvas></div>
+          <h3 data-i18n="perf.chartMetaTitle">Meta — pression de diffusion vs volume de clics</h3>
+          <p class="sub" data-i18n="perf.chartMetaSub">Le doublement puis le pic d'impressions (mars-avril) sont des choix assumés de visibilité, une fois l'objectif de clics dépassé.</p>
+          <div class="chart-box"><canvas id="chartMeta" role="img" data-i18n-aria="perf.chartMetaAria" aria-label="Évolution mensuelle des impressions et clics Meta"></canvas></div>
         </div>
         <div class="card">
-          <h3>Google Search — la montée en puissance de l'algorithme</h3>
-          <p class="sub">Après la phase d'apprentissage de janvier, un CTR durablement installé au-dessus de 10 %, avec un record d'impressions en clôture.</p>
-          <div class="chart-box"><canvas id="chartSearch" role="img" aria-label="Évolution mensuelle des clics et du CTR Search"></canvas></div>
+          <h3 data-i18n="perf.chartSearchTitle">Google Search — la montée en puissance de l'algorithme</h3>
+          <p class="sub" data-i18n="perf.chartSearchSub">Après la phase d'apprentissage de janvier, un CTR durablement installé au-dessus de 10 %, avec un record d'impressions en clôture.</p>
+          <div class="chart-box"><canvas id="chartSearch" role="img" data-i18n-aria="perf.chartSearchAria" aria-label="Évolution mensuelle des clics et du CTR Search"></canvas></div>
         </div>
         <div class="card">
-          <h3>Audience Meta — clics par âge sur l'ensemble de la campagne</h3>
-          <p class="sub">Le cœur de cible senior domine sur l'ensemble de la vague 1 : les 55+ concentrent 36,7 % des clics (agrégation des six rapports mensuels, pondérée par les clics).</p>
-          <div class="chart-box"><canvas id="chartAges" role="img" aria-label="Répartition des clics Meta par tranche d'âge sur l'ensemble de la campagne"></canvas></div>
+          <h3 data-i18n="perf.chartAgesTitle">Audience Meta — clics par âge sur l'ensemble de la campagne</h3>
+          <p class="sub" data-i18n="perf.chartAgesSub">Le cœur de cible senior domine sur l'ensemble de la vague 1 : les 55+ concentrent 36,7 % des clics (agrégation des six rapports mensuels, pondérée par les clics).</p>
+          <div class="chart-box"><canvas id="chartAges" role="img" data-i18n-aria="perf.chartAgesAria" aria-label="Répartition des clics Meta par tranche d'âge sur l'ensemble de la campagne"></canvas></div>
         </div>
       </div>
       <details class="data">
-        <summary>Voir le tableau de données complet — janvier → juin 2026</summary>
+        <summary data-i18n="perf.tableSummary">Voir le tableau de données complet — janvier → juin 2026</summary>
         <div class="tbl-scroll">
         <table>
-          <thead><tr><th>Mois</th><th>Meta — Impressions</th><th>Meta — Clics</th><th>Meta — CTR</th><th>Search — Impressions</th><th>Search — Clics</th><th>Search — CTR</th></tr></thead>
-          <tbody>
-            <tr><td>Janvier</td><td>73 838</td><td>11 602</td><td>15,71 %</td><td>11 052</td><td>567</td><td>5,13 %</td></tr>
-            <tr><td>Février</td><td>640 033</td><td>5 844</td><td>0,91 %</td><td>14 321</td><td>1 903</td><td>13,29 %</td></tr>
-            <tr><td>Mars</td><td>1 293 662</td><td>9 897</td><td>0,77 %</td><td>11 504</td><td>1 904</td><td>16,55 %</td></tr>
-            <tr><td>Avril</td><td>2 409 717</td><td>10 046</td><td>0,42 %</td><td>10 230</td><td>1 704</td><td>16,66 %</td></tr>
-            <tr><td>Mai</td><td>2 272 003</td><td>12 695</td><td>0,56 %</td><td>12 884</td><td>1 668</td><td>12,95 %</td></tr>
-            <tr><td>Juin</td><td>985 567</td><td>10 241</td><td>1,04 %</td><td>17 358</td><td>1 847</td><td>10,64 %</td></tr>
-            <tr class="total"><td>Total</td><td>7 674 820</td><td>60 325</td><td>0,79 %</td><td>77 349</td><td>9 593</td><td>12,40 %</td></tr>
+          <thead><tr>
+            <th data-i18n="table.month">Mois</th>
+            <th data-i18n="table.metaImp">Meta — Impressions</th>
+            <th data-i18n="table.metaClicks">Meta — Clics</th>
+            <th data-i18n="table.metaCtr">Meta — CTR</th>
+            <th data-i18n="table.searchImp">Search — Impressions</th>
+            <th data-i18n="table.searchClicks">Search — Clics</th>
+            <th data-i18n="table.searchCtr">Search — CTR</th>
+          </tr></thead>
+          <tbody id="dataTableBody">
+            <tr data-month="0"><td></td><td>73 838</td><td>11 602</td><td>15,71 %</td><td>11 052</td><td>567</td><td>5,13 %</td></tr>
+            <tr data-month="1"><td></td><td>640 033</td><td>5 844</td><td>0,91 %</td><td>14 321</td><td>1 903</td><td>13,29 %</td></tr>
+            <tr data-month="2"><td></td><td>1 293 662</td><td>9 897</td><td>0,77 %</td><td>11 504</td><td>1 904</td><td>16,55 %</td></tr>
+            <tr data-month="3"><td></td><td>2 409 717</td><td>10 046</td><td>0,42 %</td><td>10 230</td><td>1 704</td><td>16,66 %</td></tr>
+            <tr data-month="4"><td></td><td>2 272 003</td><td>12 695</td><td>0,56 %</td><td>12 884</td><td>1 668</td><td>12,95 %</td></tr>
+            <tr data-month="5"><td></td><td>985 567</td><td>10 241</td><td>1,04 %</td><td>17 358</td><td>1 847</td><td>10,64 %</td></tr>
+            <tr class="total"><td data-i18n="table.total">Total</td><td>7 674 820</td><td>60 325</td><td>0,79 %</td><td>77 349</td><td>9 593</td><td>12,40 %</td></tr>
           </tbody>
         </table>
         </div>
       </details>
 
       <div class="card wide sf">
-        <h3>Focus Search — mots-clés &amp; termes de recherche</h3>
-        <p class="sub">Ce que tapent réellement les internautes avant de cliquer : les requêtes transactionnelles « prix / billet » signent les meilleurs taux de clic de la campagne.</p>
+        <h3 data-i18n="sf.title">Focus Search — mots-clés &amp; termes de recherche</h3>
+        <p class="sub" data-i18n="sf.sub">Ce que tapent réellement les internautes avant de cliquer : les requêtes transactionnelles « prix / billet » signent les meilleurs taux de clic de la campagne.</p>
         <div class="sf-grid">
           <div class="tbl-scroll">
             <table>
-              <thead><tr><th>Terme de recherche</th><th>Impressions</th><th>Clics</th><th>CTR</th></tr></thead>
+              <thead><tr>
+                <th data-i18n="sf.term">Terme de recherche</th>
+                <th data-i18n="sf.impressions">Impressions</th>
+                <th data-i18n="sf.clicks">Clics</th>
+                <th data-i18n="sf.ctr">CTR</th>
+              </tr></thead>
               <tbody>
                 <tr class="hot"><td><span class="sf-bar" style="width:70px"></span>air canada vol</td><td>1 490</td><td>354</td><td>23,76 %</td></tr>
                 <tr><td><span class="sf-bar" style="width:23px"></span>air canada</td><td>1 920</td><td>113</td><td>5,89 %</td></tr>
@@ -141,50 +160,48 @@
           </div>
           <div>
             <div class="sf-chips">
-              <div class="sf-chip"><b>97,7 %</b><span>des clics Search sur mobile (9 375 clics) — des landings et parcours à penser mobile-first.</span></div>
-              <div class="sf-chip"><b>Paris · Lyon · Toulouse</b><span>en tête des clics ; Toulouse signe le meilleur CTR des grandes villes (14,01 %).</span></div>
-              <div class="sf-chip"><b>62,2 % de femmes</b><span>parmi les clics Search (CTR 13,31 %) · les 65+ en tête : 35,5 % des clics, CTR 14,76 %.</span></div>
+              <div class="sf-chip"><b data-i18n="sf.chip1b">97,7 %</b><span data-i18n="sf.chip1">des clics Search sur mobile (9 375 clics) — des landings et parcours à penser mobile-first.</span></div>
+              <div class="sf-chip"><b data-i18n="sf.chip2b">Paris · Lyon · Toulouse</b><span data-i18n="sf.chip2">en tête des clics ; Toulouse signe le meilleur CTR des grandes villes (14,01 %).</span></div>
+              <div class="sf-chip"><b data-i18n="sf.chip3b">62,2 % de femmes</b><span data-i18n="sf.chip3">parmi les clics Search (CTR 13,31 %) · les 65+ en tête : 35,5 % des clics, CTR 14,76 %.</span></div>
             </div>
-            <div class="sf-note"><b>Signal de passage à l'acte :</b> les requêtes orientées prix et réservation (« air canada vol », « prix billet avion canada aller retour ») dépassent 22 % de CTR — un capital d'intention à exploiter en vague 2 via le retargeting et les messages orientés réservation.</div>
+            <div class="sf-note" data-i18n-html="sf.note"><b>Signal de passage à l'acte :</b> les requêtes orientées prix et réservation (« air canada vol », « prix billet avion canada aller retour ») dépassent 22 % de CTR — un capital d'intention à exploiter en vague 2 via le retargeting et les messages orientés réservation.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ ENSEIGNEMENTS ============ -->
   <section class="section" id="enseignements" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Enseignements</span>
-        <h2>Ce que la vague 1 démontre.</h2>
+        <span class="eyebrow" data-i18n="learn.eyebrow">Enseignements</span>
+        <h2 data-i18n="learn.title">Ce que la vague 1 démontre.</h2>
       </div>
       <div class="learn-grid">
         <div class="learn">
-          <span class="tag">Créa</span>
-          <h4>La vidéo, meilleur levier créatif</h4>
-          <p>Lobster comme Whale ont surperformé les visuels fixes lorsqu'elles étaient diffusées — jusqu'à 22,42 % de CTR pour Lobster au lancement. Le format s'impose pour cette destination.</p>
+          <span class="tag" data-i18n="learn.tag1">Créa</span>
+          <h4 data-i18n="learn.h1">La vidéo, meilleur levier créatif</h4>
+          <p data-i18n="learn.p1">Lobster comme Whale ont surperformé les visuels fixes lorsqu'elles étaient diffusées — jusqu'à 22,42 % de CTR pour Lobster au lancement. Le format s'impose pour cette destination.</p>
         </div>
         <div class="learn">
-          <span class="tag">Média</span>
-          <h4>Search, moteur de performance durable</h4>
-          <p>Un CTR moyen de 12,40 % sur la période, très au-dessus des standards du secteur voyage, et un record d'impressions en clôture (17 358 en juin).</p>
+          <span class="tag" data-i18n="learn.tag2">Média</span>
+          <h4 data-i18n="learn.h2">Search, moteur de performance durable</h4>
+          <p data-i18n="learn.p2">Un CTR moyen de 12,40 % sur la période, très au-dessus des standards du secteur voyage, et un record d'impressions en clôture (17 358 en juin).</p>
         </div>
         <div class="learn">
-          <span class="tag">Audience</span>
-          <h4>Un cœur de cible senior confirmé</h4>
-          <p>Les 65+ et 55-64 dominent les clics sur les deux leviers en régime de croisière (65+ à 39,6 % en juin) — un enseignement précieux pour le ciblage et les messages de la reconduction.</p>
+          <span class="tag" data-i18n="learn.tag3">Audience</span>
+          <h4 data-i18n="learn.h3">Un cœur de cible senior confirmé</h4>
+          <p data-i18n="learn.p3">Les 65+ et 55-64 dominent les clics sur les deux leviers en régime de croisière (65+ à 39,6 % en juin) — un enseignement précieux pour le ciblage et les messages de la reconduction.</p>
         </div>
         <div class="learn">
-          <span class="tag">Pilotage</span>
-          <h4>Un dispositif piloté, pas subi</h4>
-          <p>Chaque mois a répondu à une intention stratégique distincte, pour un volume de clics stable (9 900 – 12 700 hors février) quelle que soit la pression de diffusion.</p>
+          <span class="tag" data-i18n="learn.tag4">Pilotage</span>
+          <h4 data-i18n="learn.h4">Un dispositif piloté, pas subi</h4>
+          <p data-i18n="learn.p4">Chaque mois a répondu à une intention stratégique distincte, pour un volume de clics stable (9 900 – 12 700 hors février) quelle que soit la pression de diffusion.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ RECOMMANDATION RECONDUCTION ============ -->
   <section class="section-dark" id="reco">
     <svg class="waves" viewBox="0 0 250 900" fill="none" aria-hidden="true">
       <path d="M-40 30 C 100 120, 100 230, -40 320" stroke="#E94C16" stroke-width="30" stroke-linecap="round"/>
@@ -193,33 +210,32 @@
     </svg>
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Recommandation · Reconduction septembre → décembre 2026</span>
-        <h2>Transformer l'essai : la feuille de route de la vague 2.</h2>
-        <p>L'objectif contractuel est très largement dépassé et les enseignements créa, média et audience sont désormais consolidés. La vague 2 doit capitaliser sur cet acquis pour transformer une campagne de conquête réussie en dispositif de performance saisonnier. Six leviers d'action — cliquez pour le détail preuve → plan d'action.</p>
+        <span class="eyebrow" data-i18n="reco.eyebrow">Recommandation · Reconduction septembre → décembre 2026</span>
+        <h2 data-i18n="reco.title">Transformer l'essai : la feuille de route de la vague 2.</h2>
+        <p data-i18n="reco.desc">L'objectif contractuel est très largement dépassé et les enseignements créa, média et audience sont désormais consolidés. La vague 2 doit capitaliser sur cet acquis pour transformer une campagne de conquête réussie en dispositif de performance saisonnier. Six leviers d'action — cliquez pour le détail preuve → plan d'action.</p>
       </div>
       <div id="accList"></div>
       <div class="retro">
-        <h3>Rétroplanning proposé</h3>
+        <h3 data-i18n="reco.retroTitle">Rétroplanning proposé</h3>
         <div class="steps">
-          <div class="step"><b>Août</b><p>Validation des créas et du wording · cadrage du double KPI clics + visibilité.</p></div>
-          <div class="step"><b>1ᵉʳ septembre</b><p>Lancement sur les structures de campagnes existantes · montée en charge budgétaire progressive.</p></div>
-          <div class="step"><b>Octobre</b><p>Pleine puissance média · activation du retargeting et des audiences lookalike.</p></div>
-          <div class="step"><b>Novembre</b><p>Réallocation budgétaire selon les performances constatées · préparation du push de fin d'année.</p></div>
-          <div class="step"><b>Décembre</b><p>Push final orienté réservation · bilan consolidé et enseignements pour 2027.</p></div>
+          <div class="step"><b data-i18n="reco.step1b">Août</b><p data-i18n="reco.step1p">Validation des créas et du wording · cadrage du double KPI clics + visibilité.</p></div>
+          <div class="step"><b data-i18n="reco.step2b">1ᵉʳ septembre</b><p data-i18n="reco.step2p">Lancement sur les structures de campagnes existantes · montée en charge budgétaire progressive.</p></div>
+          <div class="step"><b data-i18n="reco.step3b">Octobre</b><p data-i18n="reco.step3p">Pleine puissance média · activation du retargeting et des audiences lookalike.</p></div>
+          <div class="step"><b data-i18n="reco.step4b">Novembre</b><p data-i18n="reco.step4p">Réallocation budgétaire selon les performances constatées · préparation du push de fin d'année.</p></div>
+          <div class="step"><b data-i18n="reco.step5b">Décembre</b><p data-i18n="reco.step5p">Push final orienté réservation · bilan consolidé et enseignements pour 2027.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CLOSING ============ -->
   <section class="closing">
     <div class="wrap">
       <div class="card-cta">
         <div>
-          <h3>Prêts pour la vague 2 ?</h3>
-          <p>Production créative à engager dès août pour un lancement au 1ᵉʳ septembre dans les meilleures conditions — studio intégré, pilotage ROIste, tracking avancé. Welcome again.</p>
+          <h3 data-i18n="closing.title">Prêts pour la vague 2 ?</h3>
+          <p data-i18n="closing.desc">Production créative à engager dès août pour un lancement au 1ᵉʳ septembre dans les meilleures conditions — studio intégré, pilotage ROIste, tracking avancé. Welcome again.</p>
         </div>
-        <div class="cta-side">Agence Link<small>Bordeaux · Performance digitale</small></div>
+        <div class="cta-side"><span data-i18n="closing.agency">Agence Link</span><small data-i18n="closing.location">Bordeaux · Performance digitale</small></div>
       </div>
     </div>
   </section>
@@ -228,12 +244,12 @@
 
 <footer>
   <div class="wrap">
-    <p>Agence Link © Copyright 2026 — Toute reproduction est interdite.<br>Document interactif compilé à partir des rapports mensuels et du bilan global, janvier → juin 2026.</p>
+    <p data-i18n-html="footer.text">Agence Link © Copyright 2026 — Toute reproduction est interdite.<br>Document interactif compilé à partir des rapports mensuels et du bilan global, janvier → juin 2026.</p>
     <div class="f-right">
-      <img src="assets/logo-canada-naturellement.png" alt="Le Canada, naturellement">
+      <img src="assets/logo-canada-naturellement.png" data-i18n-alt="brand.alt" alt="Le Canada, naturellement">
     </div>
   </div>
 </footer>
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
