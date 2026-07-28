@@ -5,8 +5,8 @@ let charts = {};
 
 const I18N = {
   fr: {
-    meta: { title: 'Le Canada, naturellement — Bilan de campagne 2026 · Agence Link' },
-    brand: { alt: 'Le Canada, naturellement', altLogo: 'Logo Le Canada, naturellement' },
+    meta: { title: '[Nom de la campagne] — Bilan de campagne 2026 · Agence Link' },
+    brand: { alt: '[Nom de la campagne]', altLogo: 'Logo [Nom de la campagne]' },
     header: {
       report: 'Rapport de campagne',
       navAria: 'Navigation du bilan',
@@ -22,10 +22,11 @@ const I18N = {
     },
     hero: {
       eyebrow: 'Rapport de campagne · Bilan final — Janvier → Juin 2026',
-      lead: 'Six mois de diffusion Meta & Google Search pilotés par Link pour la destination Canada : un dispositif adapté mois après mois, conclu très largement au-delà des engagements contractuels.',
+      title: '[Nom de la campagne]',
+      lead: 'Six mois de diffusion Meta & Google Search pilotés par Link pour [client / destination] : un dispositif adapté mois après mois, conclu très largement au-delà des engagements contractuels.',
       flag1: 'Objectif contractuel de clics dépassé',
       flag2: 'Meta · Google Search',
-      flag3: 'Landing opodo.fr',
+      flag3: 'Landing [url landing]',
       flag4: '3 créas — 2 vidéos, 2 visuels fixes',
       kpi1: 'Impressions diffusées — tous leviers confondus',
       kpi2: 'Clics générés en 6 mois de campagne',
@@ -75,12 +76,12 @@ const I18N = {
       chip2b: 'Paris · Lyon · Toulouse',
       chip3: 'parmi les clics Search (CTR 13,31\u202f%) · les 65+ en tête : 35,5\u202f% des clics, CTR 14,76\u202f%.',
       chip3b: '62,2\u202f% de femmes',
-      note: '<b>Signal de passage à l\u2019acte\u202f:</b> les requêtes orientées prix et réservation («\u202fair canada vol\u202f», «\u202fprix billet avion canada aller retour\u202f») dépassent 22\u202f% de CTR — un capital d\u2019intention à exploiter en vague 2 via le retargeting et les messages orientés réservation.'
+      note: '<b>Signal de passage à l\u2019acte\u202f:</b> les requêtes orientées prix et réservation («\u202f[mot-cle 1]\u202f», «\u202f[mot-cle 2]\u202f») dépassent 22\u202f% de CTR — un capital d\u2019intention à exploiter en vague 2 via le retargeting et les messages orientés réservation.'
     },
     learn: {
       eyebrow: 'Enseignements', title: 'Ce que la vague 1 démontre.',
       tag1: 'Créa', h1: 'La vidéo, meilleur levier créatif',
-      p1: 'Lobster comme Whale ont surperformé les visuels fixes lorsqu\u2019elles étaient diffusées — jusqu\u2019à 22,42\u202f% de CTR pour Lobster au lancement. Le format s\u2019impose pour cette destination.',
+      p1: '[créa vidéo 1] comme [créa vidéo 2] ont surperformé les visuels fixes lorsqu\u2019elles étaient diffusées — jusqu\u2019à 22,42\u202f% de CTR pour [créa vidéo 1] au lancement. Le format s\u2019impose pour [client / destination].',
       tag2: 'Média', h2: 'Search, moteur de performance durable',
       p2: 'Un CTR moyen de 12,40\u202f% sur la période, très au-dessus des standards du secteur voyage, et un record d\u2019impressions en clôture (17\u202f358 en juin).',
       tag3: 'Audience', h3: 'Un cœur de cible senior confirmé',
@@ -108,10 +109,10 @@ const I18N = {
     },
     assets: {
       eyebrow: 'Assets',
-      title: 'Bibliothèque des assets Canada',
+      title: 'Bibliothèque des assets [client]',
       desc: 'Tous les éléments sources sont regroupés ici par catégorie pour retrouver rapidement les visuels, vidéos et assets de campagne.',
       videosTitle: 'Vidéos',
-      videosDesc: 'Les 6 déclinaisons vidéo disponibles pour la campagne.',
+      videosDesc: 'Les 6 déclinaisons vidéo disponibles comme exemples pour le template.',
       visualsTitle: 'Visuels par mois',
       visualsDesc: 'Les créas fixes sont classées par mois de diffusion, avec chaque format accessible en un clic.',
       linkTitle: "Link à l'Acte",
@@ -139,8 +140,8 @@ const I18N = {
     }
   },
   en: {
-    meta: { title: 'Canada Extraordinary — 2026 Campaign Report · Link Agency' },
-    brand: { alt: 'Canada Extraordinary', altLogo: 'Canada Extraordinary logo' },
+    meta: { title: '[Campaign name] — 2026 Campaign Report · Link Agency' },
+    brand: { alt: '[Campaign name]', altLogo: '[Campaign name] logo' },
     header: {
       report: 'Campaign Report',
       navAria: 'Report navigation',
@@ -156,10 +157,11 @@ const I18N = {
     },
     hero: {
       eyebrow: 'Campaign Report · Final Assessment — January → June 2026',
-      lead: 'Six months of Meta and Google Search media managed by Link for the Canada destination: a month-by-month adaptive approach, concluding well beyond contractual commitments.',
+      title: '[Campaign name]',
+      lead: 'Six months of Meta and Google Search media managed by Link for [client / destination]: a month-by-month adaptive approach, concluding well beyond contractual commitments.',
       flag1: 'Contractual click target exceeded',
       flag2: 'Meta · Google Search',
-      flag3: 'opodo.fr landing page',
+      flag3: '[landing page url]',
       flag4: '3 creatives — 2 videos, 2 static visuals',
       kpi1: 'Impressions delivered — all channels combined',
       kpi2: 'Clicks generated over 6 months of campaigning',
@@ -209,12 +211,12 @@ const I18N = {
       chip2b: 'Paris · Lyon · Toulouse',
       chip3: 'among Search clicks (CTR 13.31%) · 65+ lead: 35.5% of clicks, CTR 14.76%.',
       chip3b: '62.2% women',
-      note: '<b>Conversion signal:</b> price- and booking-oriented queries (\u201cair canada vol\u201d, \u201cprix billet avion canada aller retour\u201d) exceed 22% CTR — intent worth leveraging in Wave 2 through retargeting and booking-focused messaging.'
+      note: '<b>Conversion signal:</b> price- and booking-oriented queries (\u201c[keyword 1]\u201d, \u201c[keyword 2]\u201d) exceed 22% CTR — intent worth leveraging in Wave 2 through retargeting and booking-focused messaging.'
     },
     learn: {
       eyebrow: 'Key Learnings', title: 'What Wave 1 demonstrates.',
       tag1: 'Creative', h1: 'Video as the strongest creative lever',
-      p1: 'Lobster and Whale consistently outperformed static visuals when in rotation — up to 22.42% CTR for Lobster at launch. Video is the format of choice for this destination.',
+      p1: '[video creative 1] and [video creative 2] consistently outperformed static visuals when in rotation — up to 22.42% CTR for [video creative 1] at launch. Video is the format of choice for [client / destination].',
       tag2: 'Media', h2: 'Search as a sustainable performance engine',
       p2: 'An average CTR of 12.40% over the period, well above travel industry benchmarks, and a record number of impressions at close (17,358 in June).',
       tag3: 'Audience', h3: 'A confirmed senior core audience',
@@ -242,10 +244,10 @@ const I18N = {
     },
     assets: {
       eyebrow: 'Assets',
-      title: 'Canada Asset Library',
+      title: '[Client] Asset Library',
       desc: 'All source materials are grouped here by category so visuals, videos and campaign assets can be found quickly.',
       videosTitle: 'Videos',
-      videosDesc: 'The 6 video variations available for the campaign.',
+      videosDesc: 'The 6 video variations available as template examples.',
       visualsTitle: 'Visuals by Month',
       visualsDesc: 'Static creatives are organised by delivery month, with each format accessible in one click.',
       linkTitle: "Link à l'Acte",
@@ -277,18 +279,18 @@ const I18N = {
 const MOIS = [
   {nom:{fr:'Janvier',en:'January'},theme:{fr:'Lancement hors norme',en:'Exceptional launch'},badge:{fr:'Référence atypique',en:'Atypical benchmark'},
    meta:{imp:73838,clics:11602,ctrFr:'15,71 %',ctrEn:'15.71%'},search:{imp:11052,clics:567,ctrFr:'5,13 %',ctrEn:'5.13%'},
-   story:{fr:"Des performances de lancement totalement hors norme, à considérer comme une référence atypique, portées par la vidéo Lobster. L'audience Meta est majoritairement masculine et jeune (25-44 ans ≈ 63 % des clics). Search entame sa phase d'apprentissage, le temps que l'algorithme accumule de la donnée.",en:'Launch performance was entirely off the charts — an atypical benchmark driven by the Lobster video. The Meta audience was predominantly male and young (25–44 ≈ 63% of clicks). Search entered its learning phase while the algorithm accumulated data.'},
-   crea:{fr:'Vidéo Lobster — CTR 22,42 % (11 208 clics, 49 981 impressions)',en:'Lobster video — 22.42% CTR (11,208 clicks, 49,981 impressions)'},
+   story:{fr:"Des performances de lancement totalement hors norme, à considérer comme une référence atypique, portées par la vidéo [créa vidéo 1]. L'audience Meta est majoritairement masculine et jeune (25-44 ans ≈ 63 % des clics). Search entame sa phase d'apprentissage, le temps que l'algorithme accumule de la donnée.",en:'Launch performance was entirely off the charts — an atypical benchmark driven by the [créa vidéo 1] video. The Meta audience was predominantly male and young (25–44 ≈ 63% of clicks). Search entered its learning phase while the algorithm accumulated data.'},
+   crea:{fr:'Vidéo [créa vidéo 1] — CTR 22,42 % (11 208 clics, 49 981 impressions)',en:'[créa vidéo 1] video — 22.42% CTR (11,208 clicks, 49,981 impressions)'},
    audience:{fr:'Masculine à 71,3 % · segments 25-44 ans dominants',en:'71.3% male · dominant 25–44 age segments'}},
   {nom:{fr:'Février',en:'February'},theme:{fr:'Test & réactivation',en:'Test & reactivation'},badge:{fr:'Coûts maîtrisés',en:'Controlled costs'},
    meta:{imp:640033,clics:5844,ctrFr:'0,91 %',ctrEn:'0.91%'},search:{imp:14321,clics:1903,ctrFr:'13,29 %',ctrEn:'13.29%'},
-   story:{fr:"Mois marqué par un test de diffusion 100 % Instagram : coûts maîtrisés, mais trafic Opodo en retrait. Facebook est réactivé en cours de mois et relance immédiatement le trafic sur la landing page. L'audience se féminise (52,5 %) et les 55-64 ans montent à 38,3 %. Search confirme sa montée en puissance : +236 % de clics vs janvier.",en:'A month marked by a 100% Instagram delivery test: costs under control, but Opodo traffic down. Facebook was reactivated mid-month and immediately restored landing page traffic. The audience shifted female (52.5%) and 55–64 rose to 38.3%. Search confirmed its ramp-up: +236% clicks vs January.'},
+   story:{fr:"Mois marqué par un test de diffusion 100 % Instagram : coûts maîtrisés, mais trafic [partenaire landing] en retrait. Facebook est réactivé en cours de mois et relance immédiatement le trafic sur la landing page. L'audience se féminise (52,5 %) et les 55-64 ans montent à 38,3 %. Search confirme sa montée en puissance : +236 % de clics vs janvier.",en:'A month marked by a 100% Instagram delivery test: costs under control, but [partenaire landing] traffic down. Facebook was reactivated mid-month and immediately restored landing page traffic. The audience shifted female (52.5%) and 55–64 rose to 38.3%. Search confirmed its ramp-up: +236% clicks vs January.'},
    crea:{fr:'Fixe 2 en tête — 2 282 clics lien (CTR lien 2,55 %)',en:'Static 2 leading — 2,282 link clicks (2.55% link CTR)'},
    audience:{fr:'Féminisation : 52,5 % de femmes · 55-64 ans à 38,3 %',en:'Shift to female: 52.5% women · 55–64 at 38.3%'}},
   {nom:{fr:'Mars',en:'March'},theme:{fr:'Bascule visibilité',en:'Visibility pivot'},badge:{fr:'Objectif déjà dépassé',en:'Target already exceeded'},
    meta:{imp:1293662,clics:9897,ctrFr:'0,77 %',ctrEn:'0.77%'},search:{imp:11504,clics:1904,ctrFr:'16,55 %',ctrEn:'16.55%'},
    story:{fr:"L'objectif de clics est déjà largement dépassé à mi-parcours (4 997 clics pour 2 500 visés) : une part du dispositif bascule volontairement vers la visibilité. Le doublement des impressions et la baisse mécanique du CTR sont assumés pour maximiser l'exposition des messages. Search signe son excellent régime de croisière.",en:'The click target was already well exceeded mid-campaign (4,997 clicks vs 2,500 target): part of the programme deliberately pivoted to visibility. The doubling of impressions and mechanical CTR decline were accepted to maximise message exposure. Search entered excellent steady-state performance.'},
-   crea:{fr:'Vidéo Lobster — meilleure créa du mois (CTR 6,3 %)',en:'Lobster video — top creative of the month (6.3% CTR)'},
+   crea:{fr:'Vidéo [créa vidéo 1] — meilleure créa du mois (CTR 6,3 %)',en:'[créa vidéo 1] video — top creative of the month (6.3% CTR)'},
    audience:{fr:'Ciblage concentré : All 18/64 à 84,3 % des clics',en:'Focused targeting: All 18/64 at 84.3% of clicks'}},
   {nom:{fr:'Avril',en:'April'},theme:{fr:'Pic de diffusion',en:'Delivery peak'},badge:{fr:'Record d\'impressions',en:'Impression record'},
    meta:{imp:2409717,clics:10046,ctrFr:'0,42 %',ctrEn:'0.42%'},search:{imp:10230,clics:1704,ctrFr:'16,66 %',ctrEn:'16.66%'},
@@ -298,19 +300,19 @@ const MOIS = [
   {nom:{fr:'Mai',en:'May'},theme:{fr:'Record de clics',en:'Click record'},badge:{fr:'Meilleur mois en volume',en:'Best month by volume'},
    meta:{imp:2272003,clics:12695,ctrFr:'0,56 %',ctrEn:'0.56%'},search:{imp:12884,clics:1668,ctrFr:'12,95 %',ctrEn:'12.95%'},
    story:{fr:"Meilleur mois de la campagne en volume de clics (+26 % vs avril), avec le retour de la vidéo et un dispositif pleinement rétabli : les trois créas performent simultanément, signe d'un mix créatif équilibré. L'audience senior reprend la première place. Search reste stable et performant.",en:'Best month of the campaign by click volume (+26% vs April), with video back in rotation and the programme fully restored: all three creatives performed simultaneously, signalling a balanced creative mix. The senior audience reclaimed top position. Search remained stable and high-performing.'},
-   crea:{fr:'Mix équilibré — Lobster 7 % · Fixe 1 7,76 % · Fixe 2 9,01 %',en:'Balanced mix — Lobster 7% · Static 1 7.76% · Static 2 9.01%'},
+   crea:{fr:'Mix équilibré — [créa vidéo 1] 7 % · Fixe 1 7,76 % · Fixe 2 9,01 %',en:'Balanced mix — [créa vidéo 1] 7% · Static 1 7.76% · Static 2 9.01%'},
    audience:{fr:'Seniors en tête : 65+ à 26,7 % · 55-64 à 19,8 %',en:'Seniors leading: 65+ at 26.7% · 55–64 at 19.8%'}},
   {nom:{fr:'Juin',en:'June'},theme:{fr:'Recentrage qualitatif',en:'Quality refocus'},badge:{fr:'Meilleur CTR en régime normal',en:'Best CTR in normal delivery'},
    meta:{imp:985567,clics:10241,ctrFr:'1,04 %',ctrEn:'1.04%'},search:{imp:17358,clics:1847,ctrFr:'10,64 %',ctrEn:'10.64%'},
-   story:{fr:"Clôture sur le meilleur CTR de la campagne en régime de diffusion normal : diffusion resserrée (−57 % d'impressions) pour des clics qui ne reculent que de 19 % — une pression publicitaire nettement mieux convertie (CTR quasi doublé vs mai). La vidéo Whale concentre plus de la moitié des clics créas, l'engagement bondit de +55 % et Search signe son record d'impressions.",en:'Closed on the campaign\u2019s best CTR in normal delivery mode: tighter delivery (−57% impressions) with clicks down only 19% — significantly better-converting ad pressure (CTR nearly doubled vs May). The Whale video captured over half of creative clicks, engagement surged +55%, and Search set an impression record.'},
-   crea:{fr:'Vidéo Whale — CTR 1,95 % · plus de 50 % des clics créas',en:'Whale video — 1.95% CTR · over 50% of creative clicks'},
+   story:{fr:"Clôture sur le meilleur CTR de la campagne en régime de diffusion normal : diffusion resserrée (−57 % d'impressions) pour des clics qui ne reculent que de 19 % — une pression publicitaire nettement mieux convertie (CTR quasi doublé vs mai). La vidéo [créa vidéo 2] concentre plus de la moitié des clics créas, l'engagement bondit de +55 % et Search signe son record d'impressions.",en:'Closed on the campaign\u2019s best CTR in normal delivery mode: tighter delivery (−57% impressions) with clicks down only 19% — significantly better-converting ad pressure (CTR nearly doubled vs May). The [créa vidéo 2] video captured over half of creative clicks, engagement surged +55%, and Search set an impression record.'},
+   crea:{fr:'Vidéo [créa vidéo 2] — CTR 1,95 % · plus de 50 % des clics créas',en:'[créa vidéo 2] video — 1.95% CTR · over 50% of creative clicks'},
    audience:{fr:'Féminine à 73,3 % · 65+ au plus haut : 39,6 % des clics',en:'73.3% female · 65+ at peak: 39.6% of clicks'}}
 ];
 
 const RECOS = [
   {t:{fr:'Sanctuariser la vidéo — et sécuriser sa diffusion',en:'Protect video — and secure its delivery'},
-   p:{fr:"La vidéo a surperformé les visuels fixes à chaque diffusion : Lobster jusqu'à 22,42 % de CTR au lancement, Whale plus de la moitié des clics créas en juin. En avril, une désélection automatique par Meta — sans alerte — a privé le dispositif de son meilleur levier.",en:'Video outperformed static visuals at every rotation: Lobster up to 22.42% CTR at launch, Whale over half of creative clicks in June. In April, automatic rejection by Meta — without alert — deprived the programme of its strongest lever.'},
-   a:{fr:"Produire 2 nouvelles vidéos 15 s via le studio intégré Link avant fin août si possible ; sinon, l'alternance 1 mois sur 2 entre la vidéo Lobster et la vidéo Whale est OK.",en:'Produce 2 new 15-second videos via the Link in-house studio before end of August if possible; otherwise, alternating Lobster and Whale video every other month is acceptable.'}},
+   p:{fr:"La vidéo a surperformé les visuels fixes à chaque diffusion : [créa vidéo 1] jusqu'à 22,42 % de CTR au lancement, [créa vidéo 2] plus de la moitié des clics créas en juin. En avril, une désélection automatique par Meta — sans alerte — a privé le dispositif de son meilleur levier.",en:'Video outperformed static visuals at every rotation: [créa vidéo 1] up to 22.42% CTR at launch, [créa vidéo 2] over half of creative clicks in June. In April, automatic rejection by Meta — without alert — deprived the programme of its strongest lever.'},
+   a:{fr:"Produire 2 nouvelles vidéos 15 s via le studio intégré Link avant fin août si possible ; sinon, l'alternance 1 mois sur 2 entre la vidéo [créa vidéo 1] et la vidéo [créa vidéo 2] est OK.",en:'Produce 2 new 15-second videos via the Link in-house studio before end of August if possible; otherwise, alternating [créa vidéo 1] and [créa vidéo 2] video every other month is acceptable.'}},
   {t:{fr:"Écraser la phase d'apprentissage",en:'Eliminate the learning phase'},
    p:{fr:"Search a mis un mois à monter en régime : CTR de 5,13 % en janvier, puis durablement au-dessus de 10 %, jusqu'à 16,66 % en avril.",en:'Search took one month to ramp up: 5.13% CTR in January, then sustainably above 10%, reaching 16.66% in April.'},
    a:{fr:"Relancer sur les structures de campagnes existantes pour capitaliser sur l'historique algorithmique ; montée en charge budgétaire progressive sur septembre, pleine puissance dès octobre.",en:'Relaunch on existing campaign structures to leverage algorithmic history; progressive budget ramp-up in September, full weight from October.'}},
@@ -321,7 +323,7 @@ const RECOS = [
    p:{fr:'90 675 interactions sur les posts en juin (+55 % vs mai), ce qui crée une data exploitable riche pour la 2ᵉ vague, dès septembre.',en:'90,675 post interactions in June (+55% vs May), creating rich actionable data for Wave 2 from September.'},
    a:{fr:'Constituer dès septembre des audiences de retargeting (engagés 180 jours, visiteurs de la landing) et lookalike, avec une ligne budgétaire dédiée orientée réservation.',en:'From September, build retargeting audiences (180-day engagers, landing page visitors) and lookalikes, with a dedicated booking-oriented budget line.'}},
   {t:{fr:'Adapter les créas à la nouvelle vague',en:'Adapt creatives for the new wave'},
-   p:{fr:"La promesse « nature spectaculaire » a performé au printemps ; septembre-décembre ouvre de nouvelles perspectives d'évasion et de nouveaux besoins pour la cible — un territoire encore plus différenciant : été indien, aurores boréales…",en:'The \u201cspectacular nature\u201d promise performed in spring; September–December opens new escapism perspectives and audience needs — an even more distinctive territory: Indian summer, northern lights\u2026'},
+   p:{fr:"La promesse « [promesse creative] » a performé au printemps ; septembre-décembre ouvre de nouvelles perspectives d'évasion et de nouveaux besoins pour la cible — un territoire encore plus différenciant : [territoire creatif 1], [territoire creatif 2]…",en:'The “[creative promise]” angle performed in spring; September–December opens new escapism perspectives and audience needs — an even more distinctive territory: [creative territory 1], [creative territory 2]…'},
    a:{fr:"Changer les assets pour donner de l'oxygène à la campagne et renouveler l'engagement.",en:'Refresh assets to breathe new life into the campaign and renew engagement.'}},
   {t:{fr:'Piloter un double objectif clics + visibilité',en:'Manage dual click + visibility objectives'},
    p:{fr:"L'objectif de clics a été dépassé dès la mi-parcours (4 997 clics pour 2 500 visés), permettant une bascule maîtrisée vers la visibilité dès mars.",en:'The click target was exceeded by mid-campaign (4,997 clicks vs 2,500 target), enabling a controlled pivot to visibility from March.'},
