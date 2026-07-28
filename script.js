@@ -17,6 +17,7 @@ const I18N = {
       timeline: 'Fil de campagne',
       performance: 'Performance',
       learnings: 'Enseignements',
+      assets: 'Assets',
       renewal: 'Reconduction 2026'
     },
     hero: {
@@ -105,6 +106,29 @@ const I18N = {
       desc: 'Production créative à engager dès août pour un lancement au 1ᵉʳ septembre dans les meilleures conditions — studio intégré, pilotage ROIste, tracking avancé. Welcome again.',
       agency: 'Agence Link', location: 'Bordeaux · Performance digitale'
     },
+    assets: {
+      eyebrow: 'Assets',
+      title: 'Bibliothèque des assets Canada',
+      desc: 'Tous les éléments sources sont regroupés ici par catégorie pour retrouver rapidement les visuels, vidéos et assets de campagne.',
+      videosTitle: 'Vidéos',
+      videosDesc: 'Les 6 déclinaisons vidéo disponibles pour la campagne.',
+      visualsTitle: 'Visuels par mois',
+      visualsDesc: 'Les créas fixes sont classées par mois de diffusion, avec chaque format accessible en un clic.',
+      linkTitle: "Link à l'Acte",
+      linkDesc: 'Le visuel final validé, conservé comme référence créative.',
+      validVisual: 'Visuel valide',
+      closeImage: "Fermer l'image",
+      count6: '6 visuels',
+      count7: '7 visuels',
+      months: {
+        january: 'Janvier',
+        february: 'Février',
+        march: 'Mars',
+        april: 'Avril',
+        may: 'Mai',
+        june: 'Juin'
+      }
+    },
     footer: {
       text: 'Agence Link © Copyright 2026 — Toute reproduction est interdite.<br>Document interactif compilé à partir des rapports mensuels et du bilan global, janvier → juin 2026.'
     },
@@ -127,6 +151,7 @@ const I18N = {
       timeline: 'Campaign Timeline',
       performance: 'Performance',
       learnings: 'Key Learnings',
+      assets: 'Assets',
       renewal: '2026 Renewal'
     },
     hero: {
@@ -214,6 +239,29 @@ const I18N = {
       title: 'Ready for Wave 2?',
       desc: 'Creative production to begin in August for a 1 September launch in optimal conditions — in-house studio, ROI-driven management, advanced tracking. Welcome again.',
       agency: 'Link Agency', location: 'Bordeaux · Digital Performance'
+    },
+    assets: {
+      eyebrow: 'Assets',
+      title: 'Canada Asset Library',
+      desc: 'All source materials are grouped here by category so visuals, videos and campaign assets can be found quickly.',
+      videosTitle: 'Videos',
+      videosDesc: 'The 6 video variations available for the campaign.',
+      visualsTitle: 'Visuals by Month',
+      visualsDesc: 'Static creatives are organised by delivery month, with each format accessible in one click.',
+      linkTitle: 'Conversion Visual',
+      linkDesc: 'The final approved visual kept as the creative reference.',
+      validVisual: 'Approved Visual',
+      closeImage: 'Close image',
+      count6: '6 visuals',
+      count7: '7 visuals',
+      months: {
+        january: 'January',
+        february: 'February',
+        march: 'March',
+        april: 'April',
+        may: 'May',
+        june: 'June'
+      }
     },
     footer: {
       text: 'Link Agency © Copyright 2026 — All reproduction prohibited.<br>Interactive document compiled from monthly reports and the overall assessment, January → June 2026.'
@@ -594,7 +642,77 @@ function updateCharts() {
   charts.ages.update();
 }
 
+function initAssetLightbox() {
+  const lightbox = document.getElementById('assetLightbox');
+  const lightboxImage = document.getElementById('assetLightboxImage');
+  const lightboxCaption = document.getElementById('assetLightboxCaption');
+  const closeBtn = document.getElementById('assetLightboxClose');
+  const assetsSection = document.getElementById('assets');
+  const imageTiles = assetsSection?.querySelectorAll('a.asset-tile');
+
+  if (!lightbox || !lightboxImage || !lightboxCaption || !closeBtn || !assetsSection || !imageTiles?.length) return;
+
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    lightboxImage.alt = '';
+    lightboxCaption.textContent = '';
+    document.body.style.overflow = '';
+  };
+
+  const openLightbox = tile => {
+    lightboxImage.src = tile.dataset.fullsrc || '';
+    lightboxImage.alt = tile.querySelector('img')?.alt || '';
+    lightboxCaption.textContent = tile.querySelector('.asset-meta b')?.textContent || '';
+    lightbox.hidden = false;
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  imageTiles.forEach(tile => {
+    tile.dataset.fullsrc = tile.getAttribute('href') || '';
+    tile.removeAttribute('href');
+    tile.removeAttribute('target');
+    tile.removeAttribute('rel');
+    tile.setAttribute('role', 'button');
+    tile.setAttribute('tabindex', '0');
+  });
+
+  assetsSection.addEventListener('click', e => {
+    const tile = e.target.closest('a.asset-tile');
+    if (!tile) return;
+
+    e.preventDefault();
+    openLightbox(tile);
+  });
+
+  assetsSection.addEventListener('keydown', e => {
+    const tile = e.target.closest('a.asset-tile');
+    if (!tile) return;
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+
+    e.preventDefault();
+    openLightbox(tile);
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox || e.target.dataset.closeLightbox === 'true') {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
+}
+
 /* ---------- Init ---------- */
 applyLanguage();
 initCounters();
 initCharts();
+initAssetLightbox();

@@ -224,3 +224,49 @@ footer p{max-width:52ch}
 .sf-chip span{font-size:12.5px;color:var(--grey);line-height:1.45;display:block;margin-top:3px}
 .sf-note{margin-top:14px;padding:14px 17px;border-left:3px solid var(--orange);background:rgba(233,76,22,.05);border-radius:0 12px 12px 0;font-size:13.5px;color:var(--ink);line-height:1.55}
 @media(max-width:880px){.sf-grid{grid-template-columns:1fr}}
+
+/* ---------- Assets ---------- */
+.assets-layout{display:grid;gap:20px}
+.assets-card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+.assets-card h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.assets-card > p{font-size:13.5px;color:var(--grey);margin-bottom:18px}
+.asset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.asset-tile{display:block;text-decoration:none;background:var(--cream);border-radius:16px;overflow:hidden;border:1px solid rgba(35,33,32,.08);transition:transform .18s,box-shadow .18s}
+.asset-tile:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.asset-video{display:flex;flex-direction:column}
+.asset-thumb{aspect-ratio:4/3;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.asset-thumb img,.asset-thumb video{width:100%;height:100%;object-fit:cover}
+.asset-video .asset-thumb{background:#000;aspect-ratio:16/10;align-items:stretch}
+.asset-video .asset-thumb video{object-fit:contain;background:#000}
+.asset-meta{padding:14px 15px}
+.asset-meta b{display:block;font-size:13px;font-weight:800;line-height:1.35}
+.asset-meta span{display:block;font-size:11px;color:var(--grey);font-weight:600;margin-top:4px}
+.assets-group{margin-top:18px}
+.assets-group:first-child{margin-top:0}
+.assets-group h4{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:12px}
+.asset-files{display:grid;gap:10px}
+.asset-file{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--cream);border-radius:14px;padding:14px 16px;text-decoration:none;border:1px solid rgba(35,33,32,.08)}
+.asset-file strong{font-size:13.5px}
+.asset-file span{font-size:11.5px;color:var(--grey);font-weight:600}
+.asset-file em{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-deep)}
+.assets-month details{background:var(--cream);border-radius:16px;padding:4px 0;border:1px solid rgba(35,33,32,.08)}
+.assets-month details + details{margin-top:12px}
+.assets-month summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.assets-month summary::-webkit-details-marker{display:none}
+.assets-month summary span{font-size:12px;font-weight:700;color:var(--grey)}
+.assets-month .asset-grid{padding:0 16px 16px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.asset-lightbox[hidden]{display:none}
+.asset-lightbox{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:32px}
+.asset-lightbox-backdrop{position:absolute;inset:0;background:rgba(35,33,32,.86);backdrop-filter:blur(4px)}
+.asset-lightbox-figure{position:relative;z-index:1;max-width:min(1100px,92vw);max-height:88vh;margin:0;display:grid;gap:12px}
+.asset-lightbox-figure img{max-width:100%;max-height:calc(88vh - 44px);width:auto;height:auto;border-radius:18px;box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.asset-lightbox-figure figcaption{color:#fff;font-size:13px;font-weight:700;text-align:center}
+.asset-lightbox-close{position:absolute;top:18px;right:18px;z-index:2;width:46px;height:46px;border:none;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font-size:32px;line-height:1;cursor:pointer}
+.asset-lightbox-close:hover{background:rgba(255,255,255,.24)}
+@media (max-width:980px){
+  .asset-grid,.assets-month .asset-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .asset-grid,.assets-month .asset-grid{grid-template-columns:1fr}
+  .asset-file{align-items:flex-start;flex-direction:column}
+}
