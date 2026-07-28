@@ -248,7 +248,7 @@ const I18N = {
       videosDesc: 'The 6 video variations available for the campaign.',
       visualsTitle: 'Visuals by Month',
       visualsDesc: 'Static creatives are organised by delivery month, with each format accessible in one click.',
-      linkTitle: 'Conversion Visual',
+      linkTitle: "Link à l'Acte",
       linkDesc: 'The final approved visual kept as the creative reference.',
       validVisual: 'Approved Visual',
       closeImage: 'Close image',
