@@ -132,6 +132,15 @@ const I18N = {
     footer: {
       text: 'Agence Link © Copyright 2026 — Toute reproduction est interdite.<br>Document interactif compilé à partir des rapports mensuels et du bilan global, janvier → juin 2026.'
     },
+    pdf: {
+      button: 'Telecharger en PDF',
+      label: 'Nom du fichier PDF',
+      placeholder: 'bilan-canada-naturellement-2026',
+      cancel: 'Annuler',
+      confirm: 'Telecharger',
+      loading: 'Generation du PDF...',
+      error: "Le PDF n'a pas pu etre genere."
+    },
     chartLabels: {
       impressions: 'Impressions', clicks: 'Clics', ctr: 'CTR',
       ages: ['55+ (dont 65+)', '35-44', '25-34', '45-54', '18-24 / autres'],
@@ -266,6 +275,15 @@ const I18N = {
     footer: {
       text: 'Link Agency © Copyright 2026 — All reproduction prohibited.<br>Interactive document compiled from monthly reports and the overall assessment, January → June 2026.'
     },
+    pdf: {
+      button: 'Download as PDF',
+      label: 'PDF file name',
+      placeholder: 'canada-extraordinary-report-2026',
+      cancel: 'Cancel',
+      confirm: 'Download',
+      loading: 'Generating PDF...',
+      error: 'The PDF could not be generated.'
+    },
     chartLabels: {
       impressions: 'Impressions', clicks: 'Clicks', ctr: 'CTR',
       ages: ['55+ (incl. 65+)', '35-44', '25-34', '45-54', '18-24 / other'],
@@ -382,6 +400,7 @@ function applyLanguage() {
   selectMois(activeMois);
   renderRecos();
   updateCharts();
+  updatePdfExportText();
   localStorage.setItem('lang', lang);
 }
 
@@ -711,8 +730,130 @@ function initAssetLightbox() {
   });
 }
 
+function sanitizePdfFilename(value) {
+  const normalized = value
+    .trim()
+    .replace(/\.pdf$/i, '')
+    .replace(/[<>:"/\\|?*\u0000-\u001F]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+
+  return normalized || t('pdf.placeholder');
+}
+
+function updatePdfExportText() {
+  const exportBtn = document.getElementById('pdfExportBtn');
+  const exportLabel = document.querySelector('label[for="pdfFileName"]');
+  const exportInput = document.getElementById('pdfFileName');
+  const cancelBtn = document.getElementById('pdfExportCancel');
+  const confirmBtn = document.getElementById('pdfExportConfirm');
+
+  if (!exportBtn || !exportLabel || !exportInput || !cancelBtn || !confirmBtn) return;
+
+  exportBtn.textContent = t('pdf.button');
+  exportLabel.textContent = t('pdf.label');
+  exportInput.placeholder = t('pdf.placeholder');
+  if (!exportInput.value || exportInput.dataset.autofill === 'true') {
+    exportInput.value = t('pdf.placeholder');
+    exportInput.dataset.autofill = 'true';
+  }
+  cancelBtn.textContent = t('pdf.cancel');
+  confirmBtn.textContent = t('pdf.confirm');
+}
+
+function initPdfExport() {
+  const exportRoot = document.getElementById('pdfExport');
+  const exportBtn = document.getElementById('pdfExportBtn');
+  const exportPanel = document.getElementById('pdfExportPanel');
+  const exportInput = document.getElementById('pdfFileName');
+  const cancelBtn = document.getElementById('pdfExportCancel');
+  const confirmBtn = document.getElementById('pdfExportConfirm');
+  const pdfContent = document.getElementById('pdfContent');
+
+  if (!exportRoot || !exportBtn || !exportPanel || !exportInput || !cancelBtn || !confirmBtn || !pdfContent) return;
+
+  let exporting = false;
+
+  const openPanel = () => {
+    exportPanel.hidden = false;
+    exportInput.focus();
+    exportInput.select();
+  };
+
+  const closePanel = () => {
+    exportPanel.hidden = true;
+  };
+
+  const downloadPdf = async () => {
+    if (exporting) return;
+    if (!window.html2pdf) {
+      alert(t('pdf.error'));
+      return;
+    }
+
+    exporting = true;
+    const defaultLabel = t('pdf.confirm');
+    confirmBtn.disabled = true;
+    confirmBtn.textContent = t('pdf.loading');
+
+    const filename = sanitizePdfFilename(exportInput.value) + '.pdf';
+    const previousTitle = document.title;
+
+    try {
+      document.body.classList.add('exporting-pdf');
+      document.title = filename.replace(/\.pdf$/i, '');
+      await window.html2pdf().set({
+        margin: [8, 8, 8, 8],
+        filename,
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, scrollY: 0, windowWidth: 1320 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
+        pagebreak: { mode: ['css', 'legacy'] }
+      }).from(pdfContent).save();
+      closePanel();
+    } catch (error) {
+      console.error(error);
+      alert(t('pdf.error'));
+    } finally {
+      document.body.classList.remove('exporting-pdf');
+      document.title = previousTitle;
+      confirmBtn.disabled = false;
+      confirmBtn.textContent = defaultLabel;
+      exporting = false;
+    }
+  };
+
+  exportBtn.addEventListener('click', () => {
+    if (exportPanel.hidden) openPanel();
+    else closePanel();
+  });
+
+  cancelBtn.addEventListener('click', closePanel);
+  confirmBtn.addEventListener('click', downloadPdf);
+
+  exportInput.addEventListener('input', () => {
+    exportInput.dataset.autofill = 'false';
+  });
+
+  exportInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      downloadPdf();
+    }
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closePanel();
+    }
+  });
+
+  document.addEventListener('click', e => {
+    if (!exportRoot.contains(e.target)) closePanel();
+  });
+}
+
 /* ---------- Init ---------- */
 applyLanguage();
 initCounters();
 initCharts();
 initAssetLightbox();
+initPdfExport();
