@@ -786,7 +786,7 @@ function initPdfExport() {
 
   const downloadPdf = async () => {
     if (exporting) return;
-    if (!window.html2pdf) {
+    if (!window.html2canvas || !window.jspdf) {
       alert(t('pdf.error'));
       return;
     }
@@ -798,23 +798,58 @@ function initPdfExport() {
 
     const filename = sanitizePdfFilename(exportInput.value) + '.pdf';
     const previousTitle = document.title;
+    let detailsEls = [];
+    let prevDetailsOpen = [];
 
     try {
       document.body.classList.add('exporting-pdf');
       document.title = filename.replace(/\.pdf$/i, '');
-      await window.html2pdf().set({
-        margin: [8, 8, 8, 8],
-        filename,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, scrollY: 0, windowWidth: 1320 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape' },
-        pagebreak: { mode: ['css', 'legacy'] }
-      }).from(pdfContent).save();
+
+      window.scrollTo(0, 0);
+
+      detailsEls = Array.from(document.querySelectorAll('details'));
+      prevDetailsOpen = detailsEls.map(d => d.open);
+      detailsEls.forEach(d => { d.open = true; });
+
+      await new Promise(r => setTimeout(r, 400));
+
+      const vw = document.documentElement.clientWidth;
+      const bgColor = getComputedStyle(document.body).backgroundColor || '#F6EDE7';
+      const canvas = await window.html2canvas(pdfContent, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true,
+        scrollX: -window.scrollX,
+        scrollY: -window.scrollY,
+        width: pdfContent.scrollWidth,
+        height: pdfContent.scrollHeight,
+        windowWidth: vw,
+        windowHeight: window.innerHeight,
+        backgroundColor: bgColor,
+        ignoreElements: el => el.classList.contains('asset-lightbox')
+      });
+
+      const pxToMm = 0.2646;
+      const imgW = canvas.width / 2;
+      const imgH = canvas.height / 2;
+      const pdfW = imgW * pxToMm;
+      const pdfH = imgH * pxToMm;
+
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF({
+        orientation: pdfW > pdfH ? 'landscape' : 'portrait',
+        unit: 'mm',
+        format: [pdfW, pdfH]
+      });
+
+      pdf.addImage(canvas.toDataURL('image/jpeg', 0.97), 'JPEG', 0, 0, pdfW, pdfH);
+      pdf.save(filename);
       closePanel();
     } catch (error) {
       console.error(error);
       alert(t('pdf.error'));
     } finally {
+      if (detailsEls.length) detailsEls.forEach((d, idx) => { d.open = !!prevDetailsOpen[idx]; });
       document.body.classList.remove('exporting-pdf');
       document.title = previousTitle;
       confirmBtn.disabled = false;
