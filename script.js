@@ -807,9 +807,19 @@ function initPdfExport() {
 
       window.scrollTo(0, 0);
 
+      // Ouvre les <details>
       detailsEls = Array.from(document.querySelectorAll('details'));
       prevDetailsOpen = detailsEls.map(d => d.open);
       detailsEls.forEach(d => { d.open = true; });
+
+      // Ouvre les accordéons custom (.acc) de la section Reconduction
+      const accEls = Array.from(document.querySelectorAll('.acc'));
+      const prevAccOpen = accEls.map(el => el.classList.contains('open'));
+      accEls.forEach(el => {
+        el.classList.add('open');
+        const body = el.querySelector('.acc-body');
+        if (body) body.style.maxHeight = body.scrollHeight + 'px';
+      });
 
       await new Promise(r => setTimeout(r, 400));
 
@@ -850,6 +860,13 @@ function initPdfExport() {
       alert(t('pdf.error'));
     } finally {
       if (detailsEls.length) detailsEls.forEach((d, idx) => { d.open = !!prevDetailsOpen[idx]; });
+      accEls.forEach((el, idx) => {
+        if (!prevAccOpen[idx]) {
+          el.classList.remove('open');
+          const body = el.querySelector('.acc-body');
+          if (body) body.style.maxHeight = '0px';
+        }
+      });
       document.body.classList.remove('exporting-pdf');
       document.title = previousTitle;
       confirmBtn.disabled = false;
