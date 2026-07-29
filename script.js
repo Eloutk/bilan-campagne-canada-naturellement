@@ -819,12 +819,12 @@ function initPdfExport() {
         scale: 2,
         useCORS: true,
         allowTaint: true,
-        scrollX: -window.scrollX,
-        scrollY: -window.scrollY,
-        width: pdfContent.scrollWidth,
+        scrollX: 0,
+        scrollY: 0,
+        width: vw,
         height: pdfContent.scrollHeight,
         windowWidth: vw,
-        windowHeight: window.innerHeight,
+        windowHeight: pdfContent.scrollHeight,
         backgroundColor: bgColor,
         ignoreElements: el => el.classList.contains('asset-lightbox')
       });
